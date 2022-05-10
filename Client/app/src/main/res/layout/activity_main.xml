@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2C333E"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/commandView"
+        android:layout_width="383dp"
+        android:layout_height="379dp"
+        android:background="#414A57"
+        android:scrollbarStyle="outsideInset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812">
+
+        <LinearLayout
+            android:id="@+id/commandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/commandInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="Command"
+        android:inputType="textPersonName"
+        android:textColor="#D8DFDE"
+        android:textColorHint="#7E8181"
+        app:layout_constraintBottom_toTopOf="@+id/commandView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sendCommand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="#5C6A68"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="@+id/commandInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/commandInput"
+        app:layout_constraintTop_toTopOf="@+id/commandInput"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/controlBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="4dp"
+        android:background="#5C6A68"
+        android:text="CTRL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commandView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:background="#5C6A68"
+        android:text="Connect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/devicesView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/devicesView"
+        android:layout_width="207dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="#414A57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/devicesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/addressField"
+        android:layout_width="179dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="Mac Address"
+        android:inputType="textPersonName"
+        android:textColor="#D8DFDE"
+        android:textColorHint="#7E8181"
+        app:layout_constraintBottom_toTopOf="@+id/sendCommand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/devicesView" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="165dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Status: Disconnected"
+        android:textAlignment="center"
+        android:textColor="#D8DFDE"
+        app:layout_constraintBottom_toTopOf="@+id/addressField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/devicesView"
+        app:layout_constraintTop_toBottomOf="@+id/connectButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
